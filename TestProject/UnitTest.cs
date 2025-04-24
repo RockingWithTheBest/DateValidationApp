@@ -58,42 +58,42 @@ namespace TestProject
         {
             var result = libary.ValidDate("32.01.2020");
             result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered date has more than 31 days.");
+                "an input that has more than 31 days.");
         }
         [Fact]
         public void Test_ValidDate_NonAlphabeticCharacters()
         {
             var result = libary.ValidDate("#R=%^");
             result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered has non alphabetic characters.");
+                "an input that has non alphabetic characters.");
         }
         [Fact]
         public void Test_ValidDate_AlphabeticCharacters()
         {
             var result = libary.ValidDate("fxggg");
             result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered has alphabetic characters.");
+                "an input that has alphabetic characters.");
         }
         [Fact]
         public void Test_ValidDate_MoreThan12Months()
         {
             var result = libary.ValidDate("32.67.2020");
             result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered has more than 12 months.");
+                "an input that has more than 12 months.");
         }
         [Fact]
         public void Test_ValidDate_DateHasMoreThanTwoDots()
         {
             var result = libary.ValidDate("0.3.11.2020");
             result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered has more than two DOTS.");
+                "has more than two DOTS.");
         }
         [Fact]
         public void Test_ValidDate_EmptyDate()
         {
             var result = libary.ValidDate("");
-            result.Should().BeFalse("the date should be rejected as it is " +
-                "above the valid range as the entered has more than two DOTS.");
+            result.Should().BeFalse("the date should be rejected as " +
+                "it is has an empty date input.");
         }
     }
 }
